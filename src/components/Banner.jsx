@@ -9,7 +9,6 @@ const Banner = () => {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center w-full">
       
-      {/* Title & Subtitle */}
       <h1 className="text-4xl md:text-5xl font-bold text-[#1e293b] mb-4 tracking-tight">
         Friends to keep close in your life
       </h1>
@@ -17,12 +16,10 @@ const Banner = () => {
         Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
       </p>
       
-      {/* Dummy Action Button */}
       <button className="bg-[#1A4731] hover:bg-[#153423] text-white transition-colors rounded-md px-6 py-2.5 shadow-sm mb-16 font-medium text-sm flex items-center gap-2">
         <span className="text-lg">+</span> Add a Friend
       </button>
 
-      {/* 4 Summary Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl">
         {summaryData.map((data, index) => (
           <div 

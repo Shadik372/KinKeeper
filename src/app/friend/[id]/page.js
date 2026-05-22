@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { FaRegClock, FaArchive, FaRegTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { useTimeline } from '@/context/TimelineContext';
 
 export default function FriendDetails() {
   const params = useParams();
@@ -27,12 +28,15 @@ export default function FriendDetails() {
     fetchFriend();
   }, [params.id]);
 
+const { addEvent } = useTimeline(); 
+
   const handleCheckIn = (type) => {
     if (!friend) return; 
     
+    addEvent(type, friend.name);
+    
     toast.success(`Successfully logged a ${type} with ${friend.name}!`);
   };
-
   const getStatusStyle = (status) => {
     switch (status) {
       case 'overdue': return 'bg-[#ff4d4f] text-white';
